@@ -5,9 +5,7 @@ import { Filter } from './Contacts/Filter.jsx';
 import { nanoid } from 'nanoid';
 
 export const App = () => {
-  const [contacts, setContacts] = useState(() => {
-    return JSON.parse(localStorage.getItem('contacts') ?? []);
-  });
+  const [contacts, setContacts] = useState([]);
   const [filterData, setFilterData] = useState('');
 
   useEffect(() => {
