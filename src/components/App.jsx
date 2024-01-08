@@ -11,13 +11,13 @@ export const App = () => {
   const [filterData, setFilterData] = useState('');
 
   useEffect(() => {
-    const storedContacts = localStorage.getItem('contacts');
-    const parseContacts = JSON.parse(storedContacts);
-    parseContacts && setContacts(parseContacts);
+    const parseContacts = JSON.parse(window.localStorage.getItem('contacts'));
+    setContacts(parseContacts);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
+    if (contacts.length === 0) return;
+    window.localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
   const handleAddContact = formData => {
