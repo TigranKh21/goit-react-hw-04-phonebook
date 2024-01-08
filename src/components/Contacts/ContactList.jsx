@@ -1,9 +1,9 @@
 import css from './Contact.module.css';
 
-export const ContactList = ({ handleDeleteContact, state }) => {
+export const ContactList = ({ handleDeleteContact, searchData }) => {
   return (
     <ul className={css.contactsList}>
-      {state.map(contact => (
+      {searchData.map(contact => (
         <li key={contact.id} className={css.contact}>
           {contact.name}: {contact.number}
           <button

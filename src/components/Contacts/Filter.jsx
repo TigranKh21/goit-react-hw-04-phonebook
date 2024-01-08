@@ -1,6 +1,6 @@
 import css from './Contact.module.css';
 
-export const Filter = ({ handleFindChange, state }) => {
+export const Filter = ({ handleFindChange, filterData }) => {
   return (
     <div className={css.contactForm}>
       <label className={css.contactNameLabel}>Find contact by name</label>
@@ -9,7 +9,7 @@ export const Filter = ({ handleFindChange, state }) => {
         type="text"
         placeholder="search..."
         name="filter"
-        value={state.filter}
+        value={filterData}
         onChange={handleFindChange}
       />
     </div>
