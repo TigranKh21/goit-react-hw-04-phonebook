@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 
 export const App = () => {
   const [contacts, setContacts] = useState(() => {
-    return JSON.parse(localStorage.getItem('contacts') ?? []);
+    return JSON.parse(localStorage.getItem('contacts') || []);
   });
   const [filterData, setFilterData] = useState('');
 
